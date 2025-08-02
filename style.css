@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Mono&family=Whisper&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    color: #eaeaea;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;      
+    background-color: #1b1e23;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.light-mode {
+  background-color: #eaeaea;
+  transition: background-color 0.4s;
+}
+
+h1{
+    font-size: 4.5vw;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40vw;
+  height: 20vw;
+  margin: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #1b1e23;
+  transition: .4s;
+  border-radius: 200px;
+  /* box-shadow: 8px 16px 16px #0D0D0D, 
+    -8px -4px 16px rgba(255, 255, 255, 0.1); */
+  box-shadow:
+    8px 8px 24px #131417,    /* dark shadow bottom-right */
+    -8px -8px 24px #23252b,  /* light shadow top-left */
+    0 2px 8px rgba(255,255,255,0.08),
+    inset 4px 4px 12px #131417,   /* inner dark shadow */
+    inset -4px -4px 12px #23252b; 
+}
+
+.slider:before {
+  position: absolute;
+  height: 80%; 
+  width: 40%;
+  left: 7%; 
+  bottom: 10%;
+  content: "";
+  background-color: #eaeaea;
+  box-shadow: 8px 8px 16px #b8b9be, -8px -8px 16px #ffffff;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #eaeaea;
+  box-shadow:
+    8px 8px 16px #b8b9be,
+    -8px -8px 16px #ffffff,
+    0 2px 8px rgba(0,0,0,0.04);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(120%);
+  background-color: #1b1e23;
+  box-shadow:
+    8px 8px 16px #131417,   /* dark shadow */
+    -8px -8px 16px #23252b, /* light shadow */
+    0 2px 8px rgba(255,255,255,0.08);
+}
